@@ -8,6 +8,12 @@ Installing via Nuget
 
 	Install-Package xps2img
 
+Supported frameworks
+====================
+
+1. .NET Framework 4.0
+2. .NET Framework 4.5
+
 Usage
 =====
 
