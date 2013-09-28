@@ -1,4 +1,4 @@
-xps2image
+xps2im
 =========
 
 Convert xps documents to a .NET bitmap
