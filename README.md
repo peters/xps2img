@@ -1,4 +1,4 @@
-xps2im
+[xps2im](https://www.nuget.org/packages/xps2img/)
 =========
 
 Convert xps documents to a .NET bitmap
