@@ -3,7 +3,7 @@
 
 Convert xps documents to a .NET bitmap. Supports both single and multi-paged xps documents.
 
-This code is mostly derived from [xps2img](http://sourceforge.net/projects/xps2img/)@sourceforge by Ivan Ivon.
+This code is mostly derived from [xps2img@sourceforge](http://sourceforge.net/projects/xps2img/) by Ivan Ivon.
 
 Installing via Nuget
 ====================
