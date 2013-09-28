@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>xps2img</id>
+    <version>0.1.1</version>
+    <title>xps2image</title>
+    <authors>Peter Sunde / Ivan Ivon</authors>
+    <owners>petersunde</owners>
+    <projectUrl>https://github.com/peters/xps2img</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <licenseUrl>https://raw.github.com/peters/xps2image/develop/LICENSE</licenseUrl>
+    <description>Convert xps documents to a .NET bitmap</description>
+    <summary>Convert xps documents to a .NET bitmap (multiple pages are supported, including setting dpi)</summary>
+    <copyright>Peter Sunde / Ivan Ivon</copyright>
+    <tags>xps image conversion</tags>
+  </metadata>
+  <files>
+    <file src="bin\Release\v4.0\xps2img.dll" target="lib\net40" />
+    <file src="bin\Release\v4.5\xps2img.dll" target="lib\net45" />
+  </files>
+</package>
