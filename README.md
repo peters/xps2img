@@ -66,3 +66,8 @@ using (var xpsConverter = new Xps2Image(new MemoryStream(File.ReadAllBytes("mult
 	Debugger.Break();
 }
 ```
+
+License
+=======
+
+[GNU LESSER GENERAL PUBLIC LICENSE Version 3](https://github.com/peters/xps2img/blob/master/LICENSE)
