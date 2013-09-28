@@ -6,7 +6,7 @@ Convert xps documents to a .NET bitmap
 Installing via Nuget
 ====================
 
-	Install-Package xps2im
+	Install-Package xps2img
 
 Usage
 =====
