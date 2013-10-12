@@ -15,6 +15,7 @@ Supported frameworks
 
 1. .NET Framework 4.0
 2. .NET Framework 4.5
+3. .NET Framework 4.5.1
 
 Usage
 =====
@@ -29,11 +30,8 @@ using (var xpsConverter = new Xps2Image("multipage.xps"))
 	var images = xpsConverter.ToBitmap(new Parameters
 	{
 		ImageType = ImageType.Png,
-		Dpi = 300,
-		ImageOptions = new ImageOptions(100, TiffCompressOption.Zip),                    
+		Dpi = 300
 	});
-
-	Debugger.Break();
 }
 ```
 
@@ -45,11 +43,8 @@ using (var xpsConverter = new Xps2Image(File.ReadAllBytes("multipage.xps")))
 	var images = xpsConverter.ToBitmap(new Parameters
 	{
 		ImageType = ImageType.Png,
-		Dpi = 300,
-		ImageOptions = new ImageOptions(100, TiffCompressOption.Zip),                    
+		Dpi = 300
 	});
-
-	Debugger.Break();
 }
 ```
 
@@ -61,11 +56,8 @@ using (var xpsConverter = new Xps2Image(new MemoryStream(File.ReadAllBytes("mult
 	var images = xpsConverter.ToBitmap(new Parameters
 	{
 		ImageType = ImageType.Png,
-		Dpi = 300,
-		ImageOptions = new ImageOptions(100, TiffCompressOption.Zip),                    
+		Dpi = 300
 	});
-
-	Debugger.Break();
 }
 ```
 

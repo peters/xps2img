@@ -15,7 +15,8 @@
     <tags>xps image conversion</tags>
   </metadata>
   <files>
-    <file src="bin\Release\v4.0\xps2img.dll" target="lib\net40" />
-    <file src="bin\Release\v4.5\xps2img.dll" target="lib\net45" />
+    <file src="$outputfolder$\v4.0\xps2img.dll" target="lib\net40" />
+    <file src="$outputfolder$\v4.5\xps2img.dll" target="lib\net45" />
+    <file src="$outputfolder$\v4.5.1\xps2img.dll" target="lib\net451" />
   </files>
 </package>
