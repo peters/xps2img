@@ -34,7 +34,6 @@ namespace xps2img.tests
                 {
                     ImageType = ImageType.Png,
                     Dpi = 300,
-                    ImageOptions = new ImageOptions(100, TiffCompressOption.Zip),                    
                 });
 
                 Assert.That(images.Count(), Is.EqualTo(1));
@@ -45,7 +44,6 @@ namespace xps2img.tests
                 {
                     ImageType = ImageType.Png,
                     Dpi = 300,
-                    ImageOptions = new ImageOptions(100, TiffCompressOption.Zip),
                 });
 
                 Assert.That(images.Count(), Is.EqualTo(5));
@@ -61,7 +59,6 @@ namespace xps2img.tests
                 {
                     ImageType = ImageType.Png,
                     Dpi = 300,
-                    ImageOptions = new ImageOptions(100, TiffCompressOption.Zip),
                 });
 
                 Assert.That(images.Count(), Is.EqualTo(1));
@@ -72,7 +69,6 @@ namespace xps2img.tests
                 {
                     ImageType = ImageType.Png,
                     Dpi = 300,
-                    ImageOptions = new ImageOptions(100, TiffCompressOption.Zip),
                 });
 
                 Assert.That(images.Count(), Is.EqualTo(5));
@@ -88,7 +84,6 @@ namespace xps2img.tests
                 {
                     ImageType = ImageType.Png,
                     Dpi = 300,
-                    ImageOptions = new ImageOptions(100, TiffCompressOption.Zip),
                 });
 
                 Assert.That(images.Count(), Is.EqualTo(1));
@@ -99,7 +94,6 @@ namespace xps2img.tests
                 {
                     ImageType = ImageType.Png,
                     Dpi = 300,
-                    ImageOptions = new ImageOptions(100, TiffCompressOption.Zip),
                 });
 
                 Assert.That(images.Count(), Is.EqualTo(5));
@@ -113,7 +107,6 @@ namespace xps2img.tests
             {
                 ImageType = ImageType.Png,
                 Dpi = 300,
-                ImageOptions = new ImageOptions(100, TiffCompressOption.Zip),
             });
 
             Assert.That(images.Count(), Is.EqualTo(1));
@@ -122,7 +115,6 @@ namespace xps2img.tests
             {
                 ImageType = ImageType.Png,
                 Dpi = 300,
-                ImageOptions = new ImageOptions(100, TiffCompressOption.Zip),
             });
 
             Assert.That(images.Count(), Is.EqualTo(5));
@@ -135,7 +127,6 @@ namespace xps2img.tests
             {
                 ImageType = ImageType.Png,
                 Dpi = 300,
-                ImageOptions = new ImageOptions(100, TiffCompressOption.Zip),
             });
 
             Assert.That(images.Count(), Is.EqualTo(1));
@@ -144,7 +135,6 @@ namespace xps2img.tests
             {
                 ImageType = ImageType.Png,
                 Dpi = 300,
-                ImageOptions = new ImageOptions(100, TiffCompressOption.Zip),
             });
 
             Assert.That(images.Count(), Is.EqualTo(5));
@@ -157,7 +147,6 @@ namespace xps2img.tests
             {
                 ImageType = ImageType.Png,
                 Dpi = 300,
-                ImageOptions = new ImageOptions(100, TiffCompressOption.Zip),
             });
 
             Assert.That(images.Count(), Is.EqualTo(1));
@@ -166,7 +155,6 @@ namespace xps2img.tests
             {
                 ImageType = ImageType.Png,
                 Dpi = 300,
-                ImageOptions = new ImageOptions(100, TiffCompressOption.Zip),
             });
 
             Assert.That(images.Count(), Is.EqualTo(5));

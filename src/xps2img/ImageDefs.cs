@@ -1,6 +1,4 @@
-﻿using System.ComponentModel;
-
-namespace xps2img
+﻿namespace xps2img
 {
     public enum ImageType
     {
@@ -15,15 +13,10 @@ namespace xps2img
     {
         Default,
         None,
-        [Description("CCITT3")]
         Ccitt3,
-        [Description("CCITT4")]
         Ccitt4,
-        [Description("LZW")]
         Lzw,
-        [Description("RLE")]
         Rle,
-        [Description("ZIP")]
         Zip
     }
 
