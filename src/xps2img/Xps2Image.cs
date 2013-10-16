@@ -4,7 +4,6 @@ using System.Drawing;
 using System.IO;
 using System.IO.Packaging;
 using System.Linq;
-using System.Threading;
 using System.Windows.Documents;
 using System.Windows.Markup;
 using System.Windows.Media;
@@ -20,8 +19,6 @@ namespace xps2img
         private XpsDocument _xpsDocument;
         private DocumentPaginator _xpsDocumentPaginator;
         private MemoryStream _xpsDocumentInMemoryStream = new MemoryStream();
-
-        private bool _conversionStarted;
 
         public int PageCount
         {
@@ -205,49 +202,19 @@ namespace xps2img
                     var bitmap = new RenderTargetBitmap((int)Math.Round(page.Size.Width * ratio),
                                                         (int)Math.Round(page.Size.Height * ratio), dpi, dpi, PixelFormats.Pbgra32);
 
-                    return RenderPageToBitmap(page, bitmap);
-                }
-            }
-            catch (XamlParseException ex)
-            {
-                throw new ConversionException(ex.Message, pageNumber + 1, ex);
-            }
-        }
-
-        private RenderTargetBitmap RenderPageToBitmap(DocumentPage page, RenderTargetBitmap bitmap)
-        {
-            const int triesSleepInterval = 1000;
-            const int triesTotal = 30;
-            const int maxTries = triesTotal * 10;
-
-            var triesCount = triesTotal;
-
-            _conversionStarted = false;
-
-            while (true)
-            {
-                try
-                {
                     bitmap.Render(page.Visual);
 
                     // Memory leak fix.
                     // http://social.msdn.microsoft.com/Forums/en/wpf/thread/c6511918-17f6-42be-ac4c-459eeac676fd
                     ((FixedPage)page.Visual).UpdateLayout();
 
-                    _conversionStarted = true;
-
                     return bitmap;
-                }
-                catch (OutOfMemoryException)
-                {
 
-                    if (--triesCount < 0 && (!_conversionStarted || -triesCount > maxTries))
-                    {
-                        throw;
-                    }
-
-                    Thread.Sleep(triesSleepInterval);
                 }
+            }
+            catch (XamlParseException ex)
+            {
+                throw new ConversionException(ex.Message, pageNumber + 1, ex);
             }
         }
 
