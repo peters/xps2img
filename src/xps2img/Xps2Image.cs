@@ -56,7 +56,7 @@ namespace xps2img
             {
                 throw new ArgumentNullException("stream");
             }
-            stream.CopyTo(_xpsDocumentInMemoryStream);
+            CopyTo(stream, _xpsDocumentInMemoryStream);
         }
 
         public Xps2Image(byte[] byteArray)
@@ -145,6 +145,18 @@ namespace xps2img
                 }
             }
             return new List<Bitmap>();
+        }
+
+        //http://stackoverflow.com/questions/5730863/how-to-use-stream-copyto-on-net-framework-3-5
+        private static void CopyTo(Stream input, Stream output)
+        {
+            byte[] buffer = new byte[16 * 1024]; // Fairly arbitrary size
+            int bytesRead;
+
+            while ((bytesRead = input.Read(buffer, 0, buffer.Length)) > 0)
+            {
+                output.Write(buffer, 0, bytesRead);
+            }
         }
 
         private Bitmap ProcessPage(Parameters parameters, int docPageNumber)
