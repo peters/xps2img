@@ -13,6 +13,13 @@
     <summary>Convert xps documents to a .NET bitmap (multiple pages are supported, including setting dpi)</summary>
     <copyright>Peter Sunde / Ivan Ivon</copyright>
     <tags>xps image conversion</tags>
+	<frameworkAssemblies>
+		<frameworkAssembly assemblyName="PresentationCore"  />
+		<frameworkAssembly assemblyName="PresentationFramework"  />
+		<frameworkAssembly assemblyName="System.Drawing"  />
+		<frameworkAssembly assemblyName="System.Xaml"  />
+		<frameworkAssembly assemblyName="WindowsBase"  />
+	</frameworkAssemblies>
   </metadata>
   <files>
     <file src="$outputfolder$\v4.0\xps2img.dll" target="lib\net40" />
