@@ -1,4 +1,4 @@
-[xps2im](https://www.nuget.org/packages/xps2img/)
+[xps2img](https://www.nuget.org/packages/xps2img/)
 =========
 
 Convert xps documents to a .NET bitmap. Supports both single and multi-paged xps documents.
@@ -16,11 +16,12 @@ Supported frameworks
 1. .NET Framework 4.0
 2. .NET Framework 4.5
 3. .NET Framework 4.5.1
+4. .NET Framework 4.6
 
 Usage
 =====
 
-[Additional examples](https://github.com/peters/xps2image/blob/master/src/xps2img.tests/Xps2ImageTests.cs)
+[Additional examples](https://github.com/peters/xps2img/blob/master/src/xps2img.tests/Xps2ImageTests.cs)
 
 **Convert a xps document to png from disk**
 
