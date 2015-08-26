@@ -4,11 +4,11 @@ using NUnit.Framework;
 
 namespace xps2img.tests
 {
-    [TestFixture, RequiresSTA]
+    [TestFixture]
     public class Xps2ImageTests
     {
-        private readonly string _xpsSinglePage = Path.ChangeExtension(Path.GetTempFileName(), ".xps");
-        private readonly string _xpsMultiplePages = Path.ChangeExtension(Path.GetTempFileName(), ".xps");
+        readonly string _xpsSinglePage = Path.ChangeExtension(Path.GetTempFileName(), ".xps");
+        readonly string _xpsMultiplePages = Path.ChangeExtension(Path.GetTempFileName(), ".xps");
 
         [TestFixtureSetUp]
         public void TestFixtureSetup()
@@ -46,7 +46,7 @@ namespace xps2img.tests
                     Dpi = 300,
                 });
 
-                Assert.That(images.Count(), Is.EqualTo(5));
+                Assert.That(images.Count(), Is.EqualTo(8));
             }
         }
 
@@ -71,7 +71,7 @@ namespace xps2img.tests
                     Dpi = 300,
                 });
 
-                Assert.That(images.Count(), Is.EqualTo(5));
+                Assert.That(images.Count(), Is.EqualTo(8));
             }
         }
 
@@ -96,7 +96,7 @@ namespace xps2img.tests
                     Dpi = 300,
                 });
 
-                Assert.That(images.Count(), Is.EqualTo(5));
+                Assert.That(images.Count(), Is.EqualTo(8));
             }
         }
 
@@ -117,7 +117,7 @@ namespace xps2img.tests
                 Dpi = 300,
             });
 
-            Assert.That(images.Count(), Is.EqualTo(5));
+            Assert.That(images.Count(), Is.EqualTo(8));
         }
 
         [Test]
@@ -137,7 +137,7 @@ namespace xps2img.tests
                 Dpi = 300,
             });
 
-            Assert.That(images.Count(), Is.EqualTo(5));
+            Assert.That(images.Count(), Is.EqualTo(8));
         }
 
         [Test]
@@ -157,7 +157,7 @@ namespace xps2img.tests
                 Dpi = 300,
             });
 
-            Assert.That(images.Count(), Is.EqualTo(5));
+            Assert.That(images.Count(), Is.EqualTo(8));
         }
 
     }

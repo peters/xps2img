@@ -4,6 +4,7 @@ using System.Drawing;
 using System.IO;
 using System.IO.Packaging;
 using System.Linq;
+using System.Threading;
 using System.Windows.Documents;
 using System.Windows.Markup;
 using System.Windows.Media;
@@ -66,25 +67,33 @@ namespace xps2img
 
         public IEnumerable<Bitmap> ToBitmap(Parameters parameters)
         {
-            const string inMemoryPackageName = "memorystream://inmemory.xps";
-            var packageUri = new Uri(inMemoryPackageName);
-            using (var package = Package.Open(_xpsDocumentInMemoryStream))
+            var pages = new List<Bitmap>();
+            var thread = new Thread(() =>
             {
-                PackageStore.AddPackage(packageUri, package);
-
-                _xpsDocument = new XpsDocument(package, CompressionOption.Normal, inMemoryPackageName);
-                _xpsDocumentPaginator = _xpsDocument.GetFixedDocumentSequence().DocumentPaginator;
-
-                for (var docPageNumber = 0; docPageNumber < PageCount; docPageNumber++)
+                const string inMemoryPackageName = "memorystream://inmemory.xps";
+                var packageUri = new Uri(inMemoryPackageName);
+                using (var package = Package.Open(_xpsDocumentInMemoryStream))
                 {
-                    yield return ProcessPage(parameters, docPageNumber);
+                    PackageStore.AddPackage(packageUri, package);
+
+                    _xpsDocument = new XpsDocument(package, CompressionOption.Normal, inMemoryPackageName);
+                    _xpsDocumentPaginator = _xpsDocument.GetFixedDocumentSequence().DocumentPaginator;
+
+                    for (var docPageNumber = 0; docPageNumber < PageCount; docPageNumber++)
+                    {
+                        pages.Add(ProcessPage(parameters, docPageNumber));
+                    }
+
+                    PackageStore.RemovePackage(packageUri);
+
+                    _xpsDocument.Close();
+                    _xpsDocument = null;
                 }
-
-                PackageStore.RemovePackage(packageUri);
-
-                _xpsDocument.Close();
-                _xpsDocument = null;
-            }
+            });
+            thread.SetApartmentState(ApartmentState.STA);
+            thread.Start();
+            thread.Join();
+            return pages;
         }
 
         public static IEnumerable<Bitmap> ToBitmap(string filename, Parameters parameters)
