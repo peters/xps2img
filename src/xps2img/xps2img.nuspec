@@ -18,5 +18,6 @@
     <file src="$outputfolder$\v4.0\xps2img.dll" target="lib\net40" />
     <file src="$outputfolder$\v4.5\xps2img.dll" target="lib\net45" />
     <file src="$outputfolder$\v4.5.1\xps2img.dll" target="lib\net451" />
+    <file src="$outputfolder$\v4.6\xps2img.dll" target="lib\net46" />
   </files>
 </package>

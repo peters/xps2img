@@ -5,7 +5,8 @@ param(
     [string[]]$targetFrameworks = @(
         "v4.0",
         "v4.5", 
-        "v4.5.1"
+        "v4.5.1",
+		"v4.6"
     ),
     [string]$packageVersion = $null,
     [string]$config = "Release",
