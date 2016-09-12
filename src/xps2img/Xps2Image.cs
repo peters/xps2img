@@ -161,13 +161,11 @@ namespace xps2img
             var bitmapEncoder = CreateEncoder(parameters.ImageType, parameters.ImageOptions);
             var bitmapSource = GetPageBitmap(_xpsDocumentPaginator, docPageNumber, parameters);
 
-            using (var stream = new MemoryStream())
-            {
-                bitmapEncoder.Frames.Add(BitmapFrame.Create(bitmapSource));
-                bitmapEncoder.Save(stream);
+            var stream = new MemoryStream();
+            bitmapEncoder.Frames.Add(BitmapFrame.Create(bitmapSource));
+            bitmapEncoder.Save(stream);
 
-                return new Bitmap(stream);
-            }
+            return new Bitmap(stream);
         }
 
         private RenderTargetBitmap GetPageBitmap(DocumentPaginator documentPaginator, int pageNumber, Parameters parameters)
